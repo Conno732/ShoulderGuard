@@ -1,0 +1,25 @@
+{
+  "name": "ShoulderGuard",
+  "version": "1.0.0",
+  "description": "Prevent people from peeping your passwords.",
+  "manifest_version": 3,
+  "author": "Kien and Connor",
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "dist/index.html",
+    "default_title": "ShoulderGuard"
+  },
+
+  "permissions": ["activeTab"],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
