@@ -1,10 +1,9 @@
-console.log("gii");
 canvas = document.createElement("canvas");
 video = document.createElement("video");
-canvas.setAttribute("width", 350);
-canvas.setAttribute("height", 350);
-video.setAttribute("width", 350);
-video.setAttribute("height", 350);
+canvas.setAttribute("width", 500);
+canvas.setAttribute("height", 500);
+video.setAttribute("width", 500);
+video.setAttribute("height", 500);
 if (document.getElementById("password") != null) {
   document.getElementById("password").addEventListener("click", () => {
     // window.open(
@@ -12,8 +11,8 @@ if (document.getElementById("password") != null) {
     //   "_blank"
     // );
     var context = canvas.getContext("2d");
-    canvas.width = 350;
-    canvas.height = 350;
+    canvas.width = 500;
+    canvas.height = 500;
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: false })
       .then(function (stream) {
@@ -21,7 +20,7 @@ if (document.getElementById("password") != null) {
         video
           .play()
           .then(() => {
-            context.drawImage(video, 0, 0, 350, 350);
+            context.drawImage(video, 0, 0, 500, 500);
             var data = canvas.toDataURL("image/png");
             console.log(data);
 
@@ -33,7 +32,9 @@ if (document.getElementById("password") != null) {
                 console.log(xhr.responseText);
               }
             };
-            xhr.send({ data: "hello123123" });
+            xhr.send({
+              data: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAAAXNS",
+            });
           })
           .then(() => {
             video.srcObject.getTracks()[0].stop();
