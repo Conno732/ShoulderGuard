@@ -26,7 +26,7 @@ if (document.getElementById("password") != null) {
             console.log(data);
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://conno732.github.io/ShoulderGuard/");
+            xhr.open("POST", "https://shoulder-guarder.herokuapp.com/");
             xhr.onreadystatechange = function () {
               if (xhr.readyState === 4) {
                 console.log(xhr.status);
