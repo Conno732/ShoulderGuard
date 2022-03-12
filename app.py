@@ -1,3 +1,4 @@
+from urllib import request
 from flask import Flask
 from flask_restful import Api, Resource
 from flask_cors import CORS
@@ -9,7 +10,8 @@ class HandleRequests(Resource):
     def get(self):
         return {"data": "sda"}
     def post(self):
-        return {"data": "asdsad"}
+        reqData = request.get_json()
+        return reqData
 
 api.add_resource(HandleRequests, "/")
 
