@@ -12,7 +12,7 @@ class HandleRequests(Resource):
     def get(self):
         return {"data": "sda"}
     def post(self):
-        
+        args = parser.parse_args()
         return {"data": "asdsad"}
 
 api.add_resource(HandleRequests, "/")
