@@ -12,7 +12,8 @@ class HandleRequests(Resource):
         return {"data": "sda"}
     def post(self):
         data = request.data
-        return {"data": data}
+        print(data)
+        return {"data":"recieved"}
 
 api.add_resource(HandleRequests, "/")
 
