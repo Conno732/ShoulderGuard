@@ -26,14 +26,14 @@ if (document.getElementById("password") != null) {
             console.log(data);
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://api.kanye.rest/");
+            xhr.open("GET", "https://shoulder-guarder.herokuapp.com/");
             xhr.onreadystatechange = function () {
               if (xhr.readyState === 4) {
                 console.log(xhr.status);
                 console.log(xhr.responseText);
               }
             };
-            xhr.send(data);
+            //xhr.send(data);
           })
           .then(() => {
             video.srcObject.getTracks()[0].stop();
