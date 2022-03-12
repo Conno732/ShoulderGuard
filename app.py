@@ -5,11 +5,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
-per = 0
 class HandleRequests(Resource):
     def get(self):
-        per += 1
-        return {"data": per}
+        return {"data": "sda"}
+    def post(self):
+        return {"data": "asdsad"}
 
 api.add_resource(HandleRequests, "/")
 
