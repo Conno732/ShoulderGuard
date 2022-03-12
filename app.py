@@ -7,8 +7,10 @@ api = Api(app)
 CORS(app)
 
 class HandleRequests(Resource):
+    per = 0
     def get(self):
-        return {"data": "Hello World"}
+        per += 1
+        return {"data": per}
 
 api.add_resource(HandleRequests, "/")
 
