@@ -8,6 +8,8 @@ class HandleRequests(Resource):
     def get(self):
         return {"Hello World"}
 
+api.add_resource(HandleRequests, "/")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
