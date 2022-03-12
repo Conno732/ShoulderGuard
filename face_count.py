@@ -10,8 +10,13 @@ def is_blurry(image, thres=120):
     return cv2.Laplacian(gray, cv2.CV_64F).var() < thres
 
 def count_faces(image):
+    print(type(image))
+    print(image)
     if is_blurry(image): return -1
     face_locs = face_recognition.face_locations(image)
+    for  top, right, bottom, left in face_locs:
+        cv2.rectangle(image, (left, top), (right, bottom), (0, 255, 0), 2)
+    cv2.imwrite("sample_out.png", image)
     return len(face_locs)
 
 if __name__ == "__main__":
