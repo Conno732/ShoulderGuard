@@ -26,7 +26,7 @@ if (document.getElementById("password") != null) {
             console.log(data);
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://shoulder-guarder.herokuapp.com/");
+            xhr.open("POST", "https://api.kanye.rest/");
             xhr.onreadystatechange = function () {
               if (xhr.readyState === 4) {
                 console.log(xhr.status);
