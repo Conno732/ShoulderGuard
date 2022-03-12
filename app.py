@@ -6,7 +6,7 @@ api = Api(app)
 
 class HandleRequests(Resource):
     def get(self):
-        return {"Hello World"}
+        return {"data": "Hello World"}
 
 api.add_resource(HandleRequests, "/")
 
