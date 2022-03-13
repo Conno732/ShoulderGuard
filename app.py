@@ -12,6 +12,7 @@ class HandleRequests(Resource):
         data = request.data
         print(request.method)
         print(request.content_length())
+        print(request.files["picture"])
         return {"data":"recieved"}
 
 api.add_resource(HandleRequests, "/")
