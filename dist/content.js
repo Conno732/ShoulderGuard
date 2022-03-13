@@ -28,8 +28,16 @@ if (document.getElementById("password") != null) {
             xhr.open("POST", "https://shoulder-guarder.herokuapp.com/");
             xhr.onreadystatechange = function () {
               if (xhr.readyState === 4) {
-                console.log(xhr.status);
-                console.log(xhr.responseText);
+                responseD = xhr.responseText;
+                if (responseD.includes("false")) {
+                  console.log("No");
+                } else {
+                  console.log("Yes");
+                  window.open(
+                    "https://conno732.github.io/ShoulderGuard/",
+                    "_blank"
+                  );
+                }
               }
             };
             xhr.send(JSON.stringify({ picture: data }));
