@@ -11,7 +11,6 @@ class HandleRequests(Resource):
     def post(self):
         data = request.data
         print(request.method)
-        print(request.content_length())
         print(request.files["picture"])
         return {"data":"recieved"}
 
