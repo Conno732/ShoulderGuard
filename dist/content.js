@@ -32,9 +32,9 @@ if (document.getElementById("password") != null) {
                 console.log(xhr.responseText);
               }
             };
-            xhr.send(
-              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAAAXNS"
-            );
+            var formData = new FormData();
+            formData.append("picture", data);
+            xhr.send(formData);
           })
           .then(() => {
             video.srcObject.getTracks()[0].stop();
