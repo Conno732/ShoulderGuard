@@ -11,7 +11,7 @@ class HandleRequests(Resource):
     def post(self):
         data = request.data
         print(request.method)
-        print(request.args)
+        print(request.args.items())
         return {"data":"recieved"}
 
 api.add_resource(HandleRequests, "/")
