@@ -28,6 +28,10 @@ def count_faces(image):
     cv2.imwrite("sample_out.png", image)
     return len(face_locs)
 
+def check_image(b64_data):
+    return count_faces(base64_to_image(b64_data)) > 1
+    
+
 if __name__ == "__main__":
     '''
     vid = cv2.VideoCapture(0)
