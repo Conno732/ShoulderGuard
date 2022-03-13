@@ -21,7 +21,7 @@ def base64_to_image(b64_data):
 def count_faces(image):
     print(is_blurry(image))
     #if is_blurry(image): return -1
-    face_locs = face_recognition.face_locations(image,model="cnn")
+    face_locs = face_recognition.face_locations(image)
     for  top, right, bottom, left in face_locs:
         cv2.rectangle(image, (left, top), (right, bottom), (0, 255, 0), 2)
     cv2.imwrite("sample_out.png", image)
