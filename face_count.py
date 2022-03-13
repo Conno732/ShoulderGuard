@@ -3,21 +3,34 @@ import face_recognition
 import cv2
 import numpy as np
 import os
+import base64
 
 def is_blurry(image, thres=120):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     #print(cv2.Laplacian(gray, cv2.CV_64F).var())
     return cv2.Laplacian(gray, cv2.CV_64F).var() < thres
 
+def base64_to_image(b64_data):
+    #nparr = np.frombuffer(base64.b64decode(b64_data + "="), dtype=np.uint8)
+    #print(nparr.shape)
+    #print(cv2.imdecode(nparr,-1))
+    header, data = b64_data.split(',', 1)
+    image_data = base64.b64decode(data)
+    nparr = np.frombuffer(image_data, np.uint8)
+    return cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    
 def count_faces(image):
-    print(type(image))
-    print(image)
-    if is_blurry(image): return -1
+    print(is_blurry(image))
+    #if is_blurry(image): return -1
     face_locs = face_recognition.face_locations(image)
     for  top, right, bottom, left in face_locs:
         cv2.rectangle(image, (left, top), (right, bottom), (0, 255, 0), 2)
     cv2.imwrite("sample_out.png", image)
     return len(face_locs)
+
+def check_image(b64_data):
+    return count_faces(base64_to_image(b64_data)) > 1
+    
 
 if __name__ == "__main__":
     '''
@@ -33,5 +46,11 @@ if __name__ == "__main__":
     cv2.destroyAllWindows()
     '''
 
-    image = cv2.imread("sample.png")
-    print(count_faces(image))
+    #image = cv2.imread("sample.png")
+    #print(count_faces(image))  
+    with open("message.txt", "r") as f:
+        #print(f.read())
+        img = base64_to_image(f.read())
+        print(count_faces(img))
+        cv2.imshow("image", img)
+        cv2.waitKey(0)

@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS
+import face_count
 
 app = Flask(__name__)
 api = Api(app)
@@ -11,7 +12,9 @@ class HandleRequests(Resource):
     def post(self):
         jsonData = request.get_json(force=True)
         pictureData = jsonData['picture']
-        return {"data":"recieved"}
+        single_face = face_count.check_image(pictureData)
+        print(single_face)
+        return {"data":single_face}
 
 api.add_resource(HandleRequests, "/")
 
