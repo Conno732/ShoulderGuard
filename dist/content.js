@@ -6,10 +6,6 @@ video.setAttribute("width", 500);
 video.setAttribute("height", 500);
 if (document.getElementById("password") != null) {
   document.getElementById("password").addEventListener("click", () => {
-    // window.open(
-    //   "https://conno732.github.io/Alert-Page-For-ShoulderGuard/",
-    //   "_blank"
-    // );
     var context = canvas.getContext("2d");
     canvas.width = 500;
     canvas.height = 500;
@@ -22,7 +18,7 @@ if (document.getElementById("password") != null) {
           .then(() => {
             context.drawImage(video, 0, 0, 500, 500);
             var data = canvas.toDataURL("image/png");
-            console.log(data);
+            console.log(" ");
 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "https://shoulder-guarder.herokuapp.com/");
