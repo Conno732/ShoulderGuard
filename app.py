@@ -9,7 +9,7 @@ class HandleRequests(Resource):
     def get(self):
         return {"data": "sda"}
     def post(self):
-        data = request.args
+        data = request.data
         print(data)
         return {"data":"recieved"}
 
