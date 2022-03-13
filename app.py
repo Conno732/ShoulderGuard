@@ -9,9 +9,8 @@ class HandleRequests(Resource):
     def get(self):
         return {"data": "sda"}
     def post(self):
-        data = request.data
-        print(request.get_json())
-        print(request.is_xhr)
+        data = request.get_data
+        print(data)
         return {"data":"recieved"}
 
 api.add_resource(HandleRequests, "/")
