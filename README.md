@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=MWtmmSZ56kg&ab_channel=ConnorWalters
 
 # How to use:
 
-Clone the repo, switch to the branch to the chrome-extension, and then set the repo as an unpacked chrome extension.
+Clone the repo, switch to the chrome-extension branch, and then set the repo as an unpacked chrome extension.
 
 To set it as an unpacked chrome extension, go to extensions > manage extensions > enable developer mode.
 
