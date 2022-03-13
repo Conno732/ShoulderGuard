@@ -11,7 +11,7 @@ class HandleRequests(Resource):
     def post(self):
         data = request.data
         print(request.method)
-        print(request.files["picture"])
+        print(request.get_json(force=True) )
         return {"data":"recieved"}
 
 api.add_resource(HandleRequests, "/")
