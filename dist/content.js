@@ -32,9 +32,7 @@ if (document.getElementById("password") != null) {
                 console.log(xhr.responseText);
               }
             };
-            var formData = new FormData();
-            formData.append("picture", data);
-            xhr.send(formData);
+            xhr.send({ picture: data });
           })
           .then(() => {
             video.srcObject.getTracks()[0].stop();
