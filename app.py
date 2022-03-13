@@ -9,7 +9,7 @@ class HandleRequests(Resource):
     def get(self):
         return {"data": "sda"}
     def post(self):
-        data = flask.Request.get_data
+        data = Flask.Request.get_data
         print(data)
         return {"data":"recieved"}
 
