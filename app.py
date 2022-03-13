@@ -6,6 +6,7 @@ import face_count
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
+
 class HandleRequests(Resource):
     def get(self):
         return {"data": "sda"}
