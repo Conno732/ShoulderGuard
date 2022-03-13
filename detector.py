@@ -4,9 +4,8 @@ import cv2
 import numpy as np
 import os
     
-def is_blurry(image, thres=120):
+def is_blurry(image, thres=100):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    #print(cv2.Laplacian(gray, cv2.CV_64F).var())
     return cv2.Laplacian(gray, cv2.CV_64F).var() < thres
 
 
