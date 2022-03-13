@@ -10,7 +10,7 @@ class HandleRequests(Resource):
         return {"data": "sda"}
     def post(self):
         jsonData = request.get_json(force=True)
-        print(jsonData['picture'])
+        pictureData = jsonData['picture']
         return {"data":"recieved"}
 
 api.add_resource(HandleRequests, "/")
