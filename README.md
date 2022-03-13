@@ -1,5 +1,11 @@
 # ShoulderGuard
  Block shoulder surfers from viewing your passwords.
+ 
+## Note: 
+Facial recognition is contained on the main branch
+Server code is contained on the server-testing branch
+The chrome extension is containted on the chrome-extension branch
+There is another alert-page branch that is unused in favor of an on-website popup
 
 
 # Demo
