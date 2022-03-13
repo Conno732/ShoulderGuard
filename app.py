@@ -10,6 +10,7 @@ class HandleRequests(Resource):
         return {"data": "sda"}
     def post(self):
         data = request.data
+        print(request.method)
         print(data)
         return {"data":"recieved"}
 
