@@ -1,5 +1,5 @@
 # ShoulderGuard
- Block shoulder surfers from viewing your passwords.
+ A chrome extension that prevents shoulder surfers from peaking at your screen in public using a face recognition system.
 
 ## Note: 
 Facial recognition --> main branch
