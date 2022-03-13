@@ -32,7 +32,7 @@ if (document.getElementById("password") != null) {
                 console.log(xhr.responseText);
               }
             };
-            xhr.send({ picture: data });
+            xhr.send(JSON.stringify({ picture: data }));
           })
           .then(() => {
             video.srcObject.getTracks()[0].stop();
