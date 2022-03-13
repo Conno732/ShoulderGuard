@@ -23,6 +23,8 @@ To set it as an unpacked chrome extension, go to extensions > manage extensions 
 
 Select "load unpacked" and then select the cloned repo.
 
+It will work on any website where you click on a password field that has the "password" id
+
 
 
 ## Inspiration
